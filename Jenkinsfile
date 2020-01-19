@@ -29,7 +29,7 @@ pipeline {
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && mkdir /tmp/test && unzip /tmp/trainSchedule.zip -d /tmp/test && sudo /usr/bin/systemctl start train-schedule'
+                                        execCommand: 'sudo rm -rf /home/trnap/test && sudo mkdir /home/trnap/test/ && sudo unzip /tmp/trainSchedule.zip -d /home/trnap/test/ && /home/trnap/test/gradle wrapper && sh /home/trnap/test/gradlew npm_start'
                                     )
                                 ]
                             )
